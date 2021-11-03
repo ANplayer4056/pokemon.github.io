@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Pokemon 雷達分析圖" />
+    <meta property="og:image" content="./image/view.jpg" />
+    <meta property="og:description" content="Pokemon 雷達分析圖 | 你的寶可夢潛力值有多少 ?　快來測試看看吧！！" />
+    <meta name="description" content="Pokemon 雷達分析圖 | 你的寶可夢潛力值有多少 ?　快來測試看看吧！！" />
+    <meta name="author" content="Andy" />
+    <link rel="shortcut icon" href="./image/Pokemon.ico" />
+
+    <title>Pokemon 雷達分析圖</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="./image/logo.svg.png" alt="logo" class="logo">
+    </header>
+    <main id="app">
+        <section class="contain">
+            <button @click="changePokemon(-1)" class="prevBtn"></button>
+            <img :src="remderPokemon.imgUrl" alt="寶可夢精靈" class="pokemon">
+            <button @click="changePokemon(1)" class="nextBtn"></button>
+        </section>
+        <section class="radar">
+            <h2 class="cardTitle" v-cloak>{{ remderPokemon.titleTxt }}</h2>
+            <div id="radarBox"></div>
+        </section>
+    </main>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
